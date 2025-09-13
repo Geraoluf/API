@@ -1,0 +1,10 @@
+﻿<h2>Vejrdata</h2>
+
+@if (ViewBag.Temperature != null)
+{
+    <p>Temperatur: @ViewBag.Temperature °C</p>
+}
+else
+{
+    <p>Kunne ikke hente vejrdata.</p>
+}
