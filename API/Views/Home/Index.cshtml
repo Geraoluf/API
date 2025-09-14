@@ -2,13 +2,42 @@
     ViewData["Title"] = "Home Page";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+
+
+<div class="hero-section">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+        <h1 class="display-5 fw-bold">CRUD Costumer System</h1>
+        <h2>Udviklet med MVC .NET, C#, </h2>
+        <a href="/api/weatherapi/temperature" class="btn btn-primary" target="_blank">
+            Hent temperatur json
+        </a>
+        
+        <button id="loadTemp" class="btn btn-primary">Hent temperatur data via fetch</button>
+        <br />
+        <script>
+            document.getElementById("loadTemp").addEventListener("click", async () => {
+                const response = await fetch("/api/weatherapi/temperature");
+                const data = await response.json();
+                document.getElementById("tempResult").innerText =
+                    `Station: ${data.station}, Temperatur: ${data.value} ${data.unit}`;
+            });
+        </script>
+        <div id="tempResult" class="mt-3"></div>
+        <br />
+        <h6>Viser mine færdigheder med at benytte api. Der kunne have været brugt key fra DMI vejret i WeatherAPIController </h6>
+        
+
+    </div>
 </div>
 
 
 
-<a asp-controller="Weather" asp-action="Index" class="btn btn-primary">
-    Klik på mig
-</a>
+
+<br />
+<br />
+<br />
+<br />
+
+
+

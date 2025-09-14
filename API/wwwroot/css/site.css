@@ -20,3 +20,37 @@ html {
 body {
   margin-bottom: 60px;
 }
+
+
+
+
+/* HERO-SECTION – opdateret fra Index.cshtml */
+.hero-section {
+    background-image: url('/images/BilledeSkov.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 85vh; /* Ændret fra 80vh til 90vh */
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-align: center;
+}
+
+.hero-overlay {
+    background-color: rgba(0, 0, 0, 0.5);
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2; /* Ændret fra 1 til 2 */
+}
